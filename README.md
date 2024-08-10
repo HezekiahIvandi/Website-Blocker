@@ -1,2 +1,2 @@
-# Screentime tracker
+# Website Blocker
 ## Chrome extension app
