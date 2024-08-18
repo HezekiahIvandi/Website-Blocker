@@ -1,8 +1,7 @@
-let blockedSites = ["twitter.com", "twitch.com", "x.com"];
-let currentSite = window.location.hostname;
-//alert(currentSite + "" + site);
+let blockedSites = ["twitter.com", "twitch.tv", "x.com", "twitch.com"];
+let currentSite = parseURL(window.location.hostname);
+
 if (blockedSites.includes(currentSite)) {
-  alert("Blocked");
   injectHTML();
 }
 
@@ -41,4 +40,11 @@ function generateCSS() {
         display: flex;
       }
   `;
+}
+
+function parseURL(url) {
+  if (url.startsWith("www.")) {
+    return url.slice(4);
+  }
+  return url;
 }
