@@ -11,5 +11,11 @@
       "matches": ["<all_urls>"],
       "js": ["background.js"]
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
   ]
 }
