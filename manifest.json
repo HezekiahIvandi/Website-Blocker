@@ -4,7 +4,7 @@
   "version": "1.0",
   "permissions": ["webRequest", "storage", "activeTab", "tabs"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "./popup/popup.html"
   },
   "content_scripts": [
     {
@@ -17,5 +17,9 @@
       "resources": ["assets/*"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "icons": {
+    "64": "/assets/icon.png",
+    "128": "/assets/icon128.png"
+  }
 }

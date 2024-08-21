@@ -1,0 +1,127 @@
+.container {
+  padding: 10px 20px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h1 {
+  color: rgb(187, 187, 187);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  aspect-ratio: square;
+}
+#block-current-btn {
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 3px;
+  background-color: white;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-top: 4px;
+}
+
+.block-current-container label {
+  color: rgb(187, 187, 187);
+}
+
+/* necessary to give position: relative to parent. */
+input[type="email"] {
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  padding: 3px 3px;
+}
+
+:focus {
+  outline: none;
+}
+
+.col-3 {
+  float: left;
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
+}
+
+.input-effect ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4caf50;
+  transition: 0.4s;
+}
+.input-effect:focus ~ .focus-border,
+.has-content.input-effect ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+}
+.input-effect ~ label {
+  position: absolute;
+  left: 4px;
+  width: 100%;
+  top: 2px;
+  color: rgb(133, 133, 133);
+  transition: 0.3s;
+  z-index: 100;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+.input-effect:focus ~ label,
+.has-content.input-effect ~ label {
+  top: -16px;
+  font-size: 12px;
+  color: #4caf50;
+  transition: 0.3s;
+}
+
+.btn-input {
+  background-color: white;
+  padding: 2px 4px;
+  outline: none;
+  border-radius: 3px;
+  padding: 4px 6px;
+  margin-top: 4px;
+  border: none;
+}
+
+.btn-input:focus {
+  outline: none;
+}
+
+#block-current-btn:hover,
+.btn-input:hover {
+  transition: 0.1s ease-in-out;
+  background-color: #b1afaf;
+}
+
+#clear-btn {
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  color: rgb(223, 53, 53);
+  width: fit-content;
+  padding: 5px 10px;
+}
+
+#clear-btn:hover {
+  color: rgb(255, 51, 51);
+  background-color: rgb(165, 165, 165);
+}
