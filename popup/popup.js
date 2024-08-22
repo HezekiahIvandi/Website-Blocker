@@ -28,15 +28,14 @@ const addBlackLists = async (site) => {
   let blackLists = (await getBlackLists()) || [];
   console.log("Retrieved lists: ", blackLists);
   const isDuplicate = await checkForDuplicates(site, blackLists);
-
   if (!isDuplicate) {
-    blackLists.push(site);
+    blackLists.push(site.toLowerCase());
     chrome.storage.sync.set(
       {
         blackLists: blackLists,
       },
       function () {
-        alert(site + " added to the blacklists");
+        alert(site.toLowerCase() + " added to the blacklists");
         console.log(blackLists);
       }
     );
@@ -75,7 +74,8 @@ const parseURL = (url) => {
     hostname = hostname.substring(4);
   }
 
-  return hostname;
+  // Convert the hostname to lowercase
+  return hostname.toLowerCase();
 };
 
 const checkForDuplicates = async (site, list) => {

@@ -20,14 +20,16 @@ const messages = [
   "We’re limiting access to this site to support your concentration efforts.",
   "For improved focus, this website is currently unavailable.",
 ];
-
 let blockedSites = ["twitter.com", "twitch.tv", "x.com", "twitch.com"];
-
 let currentSite = parseURL(window.location.hostname);
 
-if (blockedSites.includes(currentSite)) {
-  injectHTML();
-}
+//retrieved black lists from chrome storage
+chrome.storage.sync.get("blackLists", function (data) {
+  const blackList = data.blackLists || [];
+  if (blackList.includes(currentSite)) {
+    injectHTML();
+  }
+});
 
 //Inject html to black listed sites
 function injectHTML() {
@@ -291,6 +293,7 @@ function parseURL(url) {
   if (url.startsWith("www.")) {
     return url.slice(4);
   }
+  url.toLowerCase();
   return url;
 }
 
