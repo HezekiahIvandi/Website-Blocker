@@ -20,7 +20,6 @@ const messages = [
   "We’re limiting access to this site to support your concentration efforts.",
   "For improved focus, this website is currently unavailable.",
 ];
-let blockedSites = ["twitter.com", "twitch.tv", "x.com", "twitch.com"];
 let currentSite = parseURL(window.location.hostname);
 
 //retrieved black lists from chrome storage
