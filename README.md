@@ -15,17 +15,17 @@ First, clone the repository from GitHub to your local machine using the followin
 git clone https://github.com/HezekiahIvandi/Website-Blocker.git
 ```
 
-3. **Navigate to the Project Directory**
+2. **Navigate to the Project Directory**
 Change to the project directory:
 ```
-cd website-blocker-extension
+cd Website-Blocker
 ```
-5. **Load the Extension in Chrome**
+3. **Load the Extension in Chrome**
 - Open Chrome: Launch Google Chrome.
 - Open Extensions Page: Navigate to `chrome://extensions/`.
 - Enable Developer Mode: Toggle the "Developer mode" switch in the top right corner.
 - Load Unpacked Extension: Click the "Load unpacked" button.
 - Select the Project Directory: Choose the directory where you cloned the repository (it should contain the manifest.json file).
 
-6. **Verify Installation**
+4. **Verify Installation**
 The extension should now appear in your list of extensions. You can click on the extension icon in the toolbar to configure and use it.
