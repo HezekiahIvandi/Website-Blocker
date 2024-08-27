@@ -15,11 +15,29 @@ h1 {
   display: flex;
   gap: 10px;
   align-items: center;
+  border-bottom: 1px grey solid;
 }
 .icon {
   width: 24px;
   height: 24px;
   aspect-ratio: square;
+}
+.block-current-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#favicon {
+  width: 32px;
+  height: 32px;
+  margin: 6px 0;
+}
+
+#current-url {
+  color: white;
 }
 #block-current-btn {
   width: fit-content;
@@ -30,7 +48,6 @@ h1 {
   display: flex;
   flex-direction: column;
   border: none;
-  margin-top: 4px;
 }
 
 .block-current-container label {
@@ -124,4 +141,10 @@ input[type="email"] {
 #clear-btn:hover {
   color: rgb(255, 51, 51);
   background-color: rgb(165, 165, 165);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

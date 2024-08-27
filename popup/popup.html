@@ -14,7 +14,9 @@
       </div>
 
       <div class="block-current-container">
-        <label for="">Block current website:</label>
+        <label for="">Current website:</label>
+        <img id="favicon" src="" alt="Website Favicon" />
+        <p id="current-url"></p>
         <button id="block-current-btn" class="">Block</button>
       </div>
 
@@ -26,19 +28,21 @@
           placeholder=""
         />
         <label>Add blacklist</label>
-        <button class="btn-input add-btn">Add</button>
       </div>
+      <button class="btn-input add-btn">Add</button>
       <div class="col-3 input-effect">
         <input
-          id="blacklist-input"
+          id="remove-blacklist-input"
           class="input-effect"
           type="email"
           placeholder=""
         />
         <label>Remove blacklist</label>
-        <button class="btn-input remove-btn">Remove</button>
       </div>
-      <button id="clear-btn">Clear blacklist</button>
+      <button class="btn-input remove-btn">Remove</button>
+      <div class="footer">
+        <button id="clear-btn">Clear blacklist</button>
+      </div>
     </div>
 
     <script src="popup.js"></script>
