@@ -1,3 +1,7 @@
+const exception = [
+  "https://www.youtube.com/watch?v=8iAQ1h30n5I&t=5656s",
+  "https://www.youtube.com/watch?t=5656&v=8iAQ1h30n5I&feature=youtu.be",
+];
 const messages = [
   "This site is restricted to help you stay on track.",
   "Access to this website is currently blocked to keep you focused.",
@@ -25,7 +29,10 @@ let currentSite = parseURL(window.location.hostname);
 //retrieved black lists from chrome storage
 chrome.storage.sync.get("blackLists", function (data) {
   const blackList = data.blackLists || [];
-  if (blackList.includes(currentSite)) {
+  if (
+    blackList.includes(currentSite) &&
+    !exception.includes(window.location.href)
+  ) {
     injectHTML();
   }
 });
