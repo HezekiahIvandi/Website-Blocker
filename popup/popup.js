@@ -171,3 +171,30 @@ const addEventCurrent = async () => {
     }
   );
 };
+
+
+// theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+updateThemeIcon(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+  if (theme === 'light') {
+    themeToggle.innerHTML = '<img id="theme-icon" src="../assets/moon.png" alt="">'
+  } else {
+    themeToggle.innerHTML = '<img id="theme-icon" src="../assets/sun.png" alt="">'
+  }
+}

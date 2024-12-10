@@ -1,3 +1,39 @@
+:root {
+  /* Light theme variables */
+  --bg-primary: white;
+  --text-primary: #333;
+  --text-secondary: rgb(56, 56, 56);
+  --border-color: grey;
+  --button-bg: rgb(205, 204, 204);
+  --button-hover: #b1afaf;
+  --input-bg: white;
+  --input-text: #333;
+  --clear-btn-color: rgb(223, 53, 53);
+  --clear-btn-hover-color: rgb(255, 51, 51);
+  --clear-btn-hover-bg: rgb(165, 165, 165);
+  --focus-border-color: #4caf50;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --text-primary: white;
+  --text-secondary: rgb(187, 187, 187);
+  --border-color: #404040;
+  --button-bg: #2d2d2d;
+  --button-hover: #3d3d3d;
+  --input-bg: #2d2d2d;
+  --input-text: #ffffff;
+  --clear-btn-color: rgb(255, 99, 99);
+  --clear-btn-hover-color: rgb(255, 71, 71);
+  --clear-btn-hover-bg: rgb(77, 77, 77);
+  --focus-border-color: #4caf50;
+}
+
+body {
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
 .container {
   padding: 10px 20px;
   width: 180px;
@@ -5,8 +41,9 @@
   flex-direction: column;
   justify-content: center;
 }
+
 h1 {
-  color: rgb(187, 187, 187);
+  color: var(--text-primary);
   font-size: 14px;
   font-weight: 700;
 }
@@ -15,13 +52,15 @@ h1 {
   display: flex;
   gap: 10px;
   align-items: center;
-  border-bottom: 1px grey solid;
+  border-bottom: 1px var(--border-color) solid;
 }
+
 .icon {
   width: 24px;
   height: 24px;
   aspect-ratio: square;
 }
+
 .block-current-container {
   margin-top: 10px;
   display: flex;
@@ -37,26 +76,28 @@ h1 {
 }
 
 #current-url {
-  color: white;
+  color: var(--text-primary);
 }
+
 #block-current-btn {
   width: fit-content;
   padding: 5px 8px;
   border-radius: 3px;
-  background-color: white;
+  background-color: var(--button-bg);
   font-weight: 600;
   display: flex;
   flex-direction: column;
   border: none;
+  color: var(--text-primary);
 }
 
 .block-current-container label {
-  color: rgb(187, 187, 187);
+  color: var(--text-secondary);
 }
 
-/* necessary to give position: relative to parent. */
 input[type="email"] {
-  color: #333;
+  color: var(--input-text);
+  background-color: var(--input-bg);
   width: 100%;
   box-sizing: border-box;
   letter-spacing: 1px;
@@ -80,41 +121,45 @@ input[type="email"] {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #4caf50;
+  background-color: var(--focus-border-color);
   transition: 0.4s;
 }
+
 .input-effect:focus ~ .focus-border,
 .has-content.input-effect ~ .focus-border {
   width: 100%;
   transition: 0.4s;
 }
+
 .input-effect ~ label {
   position: absolute;
   left: 4px;
   width: 100%;
   top: 2px;
-  color: rgb(133, 133, 133);
+  color: var(--text-secondary);
   transition: 0.3s;
   z-index: 100;
   letter-spacing: 0.5px;
   pointer-events: none;
 }
+
 .input-effect:focus ~ label,
 .has-content.input-effect ~ label {
   top: -16px;
   font-size: 12px;
-  color: #4caf50;
+  color: var(--focus-border-color);
   transition: 0.3s;
 }
 
 .btn-input {
-  background-color: white;
+  background-color: var(--button-bg);
   padding: 2px 4px;
   outline: none;
   border-radius: 3px;
   padding: 4px 6px;
   margin-top: 4px;
   border: none;
+  color: var(--text-primary);
 }
 
 .btn-input:focus {
@@ -124,27 +169,47 @@ input[type="email"] {
 #block-current-btn:hover,
 .btn-input:hover {
   transition: 0.1s ease-in-out;
-  background-color: #b1afaf;
+  background-color: var(--button-hover);
 }
 
 #clear-btn {
   margin-top: 10px;
-  background-color: white;
+  background-color: var(--button-bg);
   border: none;
   border-radius: 5px;
   font-weight: 700;
-  color: rgb(223, 53, 53);
+  color: var(--clear-btn-color);
   width: fit-content;
   padding: 5px 10px;
 }
 
 #clear-btn:hover {
-  color: rgb(255, 51, 51);
-  background-color: rgb(165, 165, 165);
+  color: var(--clear-btn-hover-color);
+  background-color: var(--clear-btn-hover-bg);
 }
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Theme toggle button styles */
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle #theme-icon{
+  width: 16px;
+  height: 16px;
+  fill: var(--text-secondary);
 }
